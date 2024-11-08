@@ -42,19 +42,22 @@ namespace PizzeriaBigMamma
             ToBeDelivered = toBeDelivered;
         }
 
-        public void PrintOrder()
+        public string PrintOrder()
         {
-            Console.WriteLine("Ordre #" + Id + " Dato/Tid: " + OrderDate + " Levering: " + !ToBeDelivered);
-            if (ToBeDelivered) Console.WriteLine("Kunde: " + Customer.Name + ", " + Customer.Address + ", Tlf: " + Customer.Phone);
+            String order = $"Ordre # {Id} Dato/Tid: {OrderDate} Levering: {!ToBeDelivered}\n";
+
+            if (ToBeDelivered) order += $"Kunde: {Customer.Name}, {Customer.Address}, Tlf: {Customer.Phone} \n";
+
             foreach (OrderItem orderItem in _orderItems)
             {
-                Console.Write(orderItem.Number + " stk " + orderItem.Pizza);
+                order += $"{orderItem.Number} stk {orderItem.Pizza}";
                 if (orderItem.Toppings != null)
                     foreach (ExtraTopping ext in orderItem.Toppings)
-                        Console.Write("+ " + ext.Name + " af " + ext.Price + "kr. ");
-                Console.WriteLine(" pris: " + orderItem.CalculatePrice() + "kr.");
+                        order += $"+ {ext.Name} af {ext.Price} kr. ";
+                order += $"Pris: {orderItem.CalculatePrice()} kr.\n";
             }
-            Console.WriteLine("Pris ialt: " + CalculatePrice() + "kr.");
+            order += $"Pris ialt: {CalculatePrice()} kr.";
+            return order;
         }
     }
 }

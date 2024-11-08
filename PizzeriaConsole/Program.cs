@@ -94,7 +94,7 @@ void TestOrder()
 
     foreach (Order order in store.GetAllOrders())
     {
-        order.PrintOrder();
+        Console.WriteLine(order.PrintOrder());
         Console.WriteLine();
     }
 }
