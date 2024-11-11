@@ -9,7 +9,7 @@ namespace PizzeriaBigMamma
     public class Store
     {
         public CustomerRepository CustomerRepository { get; private set; } = new CustomerRepository();
-        public PizzaMenuCard PizzaMenuCard { get; private set; } = new PizzaMenuCard();
+        public PizzaRepository PizzaRepository { get; private set; } = new PizzaRepository();
         public List<Order> Orders { get; private set; } = new List<Order>();
 
         public void AddOrder(Order nweOrder)

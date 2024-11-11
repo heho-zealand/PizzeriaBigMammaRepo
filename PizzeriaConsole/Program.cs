@@ -48,32 +48,32 @@ void TestCustomerRepository()
 
 void TestPizzaMenuCard()
 {
-    //*************  Test af PizzaMenuCard  ************************************
-    Console.WriteLine("Test  af PizzaMenuCard");
+    //*************  Test af PizzaRepository  ************************************
+    Console.WriteLine("Test  af PizzaRepository");
     Console.WriteLine();
 
-    store.PizzaMenuCard.AddPizza(1, "MARGHERITA", 69, "Tomato & cheese");
-    store.PizzaMenuCard.AddPizza(2, "VESUVIO", 75, "Tomato,cheese & ham");
-    store.PizzaMenuCard.AddPizza(3, "CAPRICCIOSA", 80, "Tomato,cheese,ham & mushrooms");
-    store.PizzaMenuCard.AddPizza(4, "CALZONE", 80, "Baked pizza with tomato,cheese,ham & mushrooms");
-    store.PizzaMenuCard.AddPizza(5, "QUATTRO STAGIONI", 85, "Tomato,cheese,ham,mushrooms,shrimp & peppers");
+    store.PizzaRepository.AddPizza(1, "MARGHERITA", 69, "Tomato & cheese");
+    store.PizzaRepository.AddPizza(2, "VESUVIO", 75, "Tomato,cheese & ham");
+    store.PizzaRepository.AddPizza(3, "CAPRICCIOSA", 80, "Tomato,cheese,ham & mushrooms");
+    store.PizzaRepository.AddPizza(4, "CALZONE", 80, "Baked pizza with tomato,cheese,ham & mushrooms");
+    store.PizzaRepository.AddPizza(5, "QUATTRO STAGIONI", 85, "Tomato,cheese,ham,mushrooms,shrimp & peppers");
 
     Console.WriteLine("PrintMenuCard:");
     Console.WriteLine();
-    store.PizzaMenuCard.PrintMenuCard();
+    store.PizzaRepository.PrintMenuCard();
     Console.WriteLine();
 
     Console.WriteLine("Test af SearchPizza('mushrooms')");
-    List<Pizza> list = store.PizzaMenuCard.SearchPizza("mushrooms");
+    List<Pizza> list = store.PizzaRepository.SearchPizza("mushrooms");
 
     foreach (Pizza pizza in list) Console.WriteLine(pizza);
 
     Console.WriteLine();
 
 
-    store.PizzaMenuCard.AddExtraTopping("kebab", 10);
-    store.PizzaMenuCard.AddExtraTopping("kylling", 10);
-    store.PizzaMenuCard.AddExtraTopping("feta", 15);
+    store.PizzaRepository.AddExtraTopping("kebab", 10);
+    store.PizzaRepository.AddExtraTopping("kylling", 10);
+    store.PizzaRepository.AddExtraTopping("feta", 15);
 
 }
 
@@ -82,14 +82,14 @@ void TestOrder()
 {
     //*****************  Test af Order ***************************************
     Order order1 = new Order(store.CustomerRepository.GetCustomer(2), true);
-    order1.AddOrderItem(new OrderItem(store.PizzaMenuCard.GetPizza(1), null, 2));
-    order1.AddOrderItem(new OrderItem(store.PizzaMenuCard.GetPizza(2), new List<ExtraTopping>() { store.PizzaMenuCard.GetToppingByName("kebab") }, 1));
-    order1.AddOrderItem(new OrderItem(store.PizzaMenuCard.GetPizza(3), null, 2));
+    order1.AddOrderItem(new OrderItem(store.PizzaRepository.GetPizza(1), null, 2));
+    order1.AddOrderItem(new OrderItem(store.PizzaRepository.GetPizza(2), new List<ExtraTopping>() { store.PizzaRepository.GetToppingByName("kebab") }, 1));
+    order1.AddOrderItem(new OrderItem(store.PizzaRepository.GetPizza(3), null, 2));
     store.AddOrder(order1);
 
     Order order2 = new Order(null, false);
-    order2.AddOrderItem(new OrderItem(store.PizzaMenuCard.GetPizza(2), new List<ExtraTopping>() { store.PizzaMenuCard.GetToppingByName("kylling"), store.PizzaMenuCard.GetToppingByName("feta") }, 2));
-    order2.AddOrderItem(new OrderItem(store.PizzaMenuCard.GetPizza(3), null, 1));
+    order2.AddOrderItem(new OrderItem(store.PizzaRepository.GetPizza(2), new List<ExtraTopping>() { store.PizzaRepository.GetToppingByName("kylling"), store.PizzaRepository.GetToppingByName("feta") }, 2));
+    order2.AddOrderItem(new OrderItem(store.PizzaRepository.GetPizza(3), null, 1));
     store.AddOrder(order2);
 
     foreach (Order order in store.GetAllOrders())

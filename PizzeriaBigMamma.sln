@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzeriaBigMammaLibrary", "PizzeriaBigMamma\PizzeriaBigMammaLibrary.csproj", "{A7513E58-EE59-467D-BBD4-BCC25170CD33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzeriaBigMammaLibrary", "PizzeriaBigMamma\PizzeriaBigMammaLibrary.csproj", "{A7513E58-EE59-467D-BBD4-BCC25170CD33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzeriaConsole", "PizzeriaConsole\PizzeriaConsole.csproj", "{AB9DC658-31DA-4247-97B5-33BA8457DC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzeriaConsole", "PizzeriaConsole\PizzeriaConsole.csproj", "{AB9DC658-31DA-4247-97B5-33BA8457DC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigMammaRazorPages", "BigMammaRazorPages\BigMammaRazorPages.csproj", "{84DC1B9E-E05B-466C-9E22-ABD7A50A274D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AB9DC658-31DA-4247-97B5-33BA8457DC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB9DC658-31DA-4247-97B5-33BA8457DC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB9DC658-31DA-4247-97B5-33BA8457DC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84DC1B9E-E05B-466C-9E22-ABD7A50A274D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DC1B9E-E05B-466C-9E22-ABD7A50A274D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84DC1B9E-E05B-466C-9E22-ABD7A50A274D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84DC1B9E-E05B-466C-9E22-ABD7A50A274D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
